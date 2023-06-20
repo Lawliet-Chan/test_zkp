@@ -1,0 +1,13 @@
+version: '3'
+services:
+  roller:
+    image: test_zkp:0.1
+    container_name: test_zkp
+    environment:
+      - LD_LIBRARY_PATH=/scroll/roller/prover/lib:/usr/local/cuda/lib64
+      - RUST_MIN_STACK="100000000"
+      - CHAIN_ID="534353"
+      - RUST_LOG="debug"
+    volumes:
+      - ./assets:/scroll/assets
+    command: cd /scroll && make -C roller test-gpu-prover && make -C coordinator test-gpu-verifier
