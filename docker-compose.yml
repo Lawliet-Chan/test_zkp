@@ -10,4 +10,4 @@ services:
       - RUST_LOG="debug"
     volumes:
       - ./assets:/scroll/assets
-    command: cd /scroll && make -C roller test-gpu-prover && make -C coordinator test-gpu-verifier
+    command: /bin/bash -c "cd /scroll && make -C roller test-gpu-prover && make -C coordinator test-gpu-verifier"
