@@ -1,7 +1,7 @@
 PARAMS_VERSION=params-0320
 VK_VERSION=release-v0.3
 
-pre_zkp:
+test_zkp:
 	rm -rf ./assets
 	docker build -t test_zkp:0.1 .
 	mkdir -p ./assets/test_params ./assets/traces
