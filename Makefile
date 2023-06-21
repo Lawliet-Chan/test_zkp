@@ -1,5 +1,11 @@
+SCROLL_BRANCH=zk_test_automation
+HALO2_GPU_COMMIT=c5860f4e
 PARAMS_VERSION=params-0320
 VK_VERSION=release-v0.3
+
+init_repo:
+	git clone -b ${SCROLL_BRANCH} git@github.com:scroll-tech/scroll.git
+	git clone git@github.com:scroll-tech/halo2-gpu.git && cd halo2-gpu && git checkout ${HALO2_GPU_COMMIT}
 
 test_zkp:
 	rm -rf ./assets
