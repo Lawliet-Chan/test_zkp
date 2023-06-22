@@ -9,5 +9,5 @@ services:
       - CHAIN_ID="534353"
       - RUST_LOG="debug"
     volumes:
-      - ./assets:/scroll/assets
-    command: /bin/bash -c "cd /scroll && make -C roller test-gpu-prover && make -C coordinator test-gpu-verifier"
+      - ./assets:/assets
+    command: /bin/bash -c "/prover.test && /verifier.test"
