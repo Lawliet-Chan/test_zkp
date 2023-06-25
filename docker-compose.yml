@@ -11,4 +11,4 @@ services:
       - RUST_LOG="debug"
     volumes:
       - ./assets:/assets
-    command: /bin/bash -c "/prover.test -timeout 0 && /verifier.test -timeout 0"
+    command: /bin/bash -c "/prover.test && /verifier.test"
