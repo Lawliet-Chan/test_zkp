@@ -10,5 +10,7 @@ RUN cd /scroll/coordinator && make libzkp && go test -tags="gpu ffi" -c verifier
 
 FROM nvidia/cuda:11.7.1-runtime-ubuntu22.04
 WORKDIR /
+RUN echo "/" > /etc/ld.so.conf.d/a.conf && ldconfig
+COPY --from=builder /scroll/roller/prover/lib /
 COPY --from=builder /scroll/roller/prover.test /
 COPY --from=builder /scroll/coordinator/verifier.test /
