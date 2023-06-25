@@ -2,6 +2,7 @@ version: '3'
 services:
   roller:
     image: test_zkp:0.1
+    runtime: nvidia
     container_name: test_zkp
     environment:
       - LD_LIBRARY_PATH=/:/usr/local/cuda/lib64
